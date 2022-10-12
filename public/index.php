@@ -1,6 +1,5 @@
 <?php
 
-
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 
@@ -18,9 +17,9 @@ set_exception_handler('Core\Error::exceptionHandler');
 $router = new Core\Router();
 
 // Add the routes
-$router->add('', ['controller' => 'Home', 'action' => 'index']);        
-$router->add('add/', ['controller' => 'Add', 'action' => 'addUser']);
-$router->add('update', ['controller' => 'Add', 'action' => 'Update']);
-$router->add('delete', ['controller' => 'Add', 'action' => 'Delete']);
+$router->add('', ['controller' => 'User', 'action' => 'index']);        
+$router->add('add/', ['controller' => 'User', 'action' => 'addUser']);
+$router->add('update', ['controller' => 'User', 'action' => 'Update']);
+$router->add('delete', ['controller' => 'User', 'action' => 'Delete']);
     
 $router->dispatch($_SERVER['QUERY_STRING']);
